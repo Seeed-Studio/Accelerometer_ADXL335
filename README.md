@@ -1,6 +1,8 @@
-## [Accelerometer_ADXL335](https://www.seeedstudio.com/Grove-3Axis-Analog-Accelerometer-p-1086.html)
+## Accelerometer_ADXL335
 
 <img src="https://statics3.seeedstudio.com/images/P2241478.JPG" width=auto>
+
+[Grove 3-Axis Analog Accelerometer](https://www.seeedstudio.com/Grove-3Axis-Analog-Accelerometer-p-1086.html)
 
 The ADXL335 is a small, thin, low power, complete 3-axis accelerometer with signal conditioned voltage outputs. The product measures acceleration with a minimum full-scale range of ±3 g. 
 The module was designed as breakout board because ADXL335's signal is analog( more ports requested ). But the board outline is grove module that you can fix it conveniently like other groves. The sensor combined 3.3 and 5V power supply,can be used in standard arduino device and seeduino stalker. The following program code includes first-order filter which can make the output smoothly if the sensor was used in robot or toy car.
