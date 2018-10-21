@@ -44,8 +44,7 @@
 #define ZERO_Z  1.25 //
 #define SENSITIVITY 0.25//sensitivity of X/Y/Z axis is 0.25v/g
 
-class ADXL335
-{
+class ADXL335{
 private:
     void pinsInit();
     float scale;

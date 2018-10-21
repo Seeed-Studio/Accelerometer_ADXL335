@@ -31,25 +31,21 @@
 #include <Arduino.h>
 #include "ADXL335.h"
 
-void ADXL335::pinsInit()
-{
+void ADXL335::pinsInit(){
     pinMode(X_AXIS_PIN, INPUT);
     pinMode(Y_AXIS_PIN, INPUT);
     pinMode(Z_AXIS_PIN, INPUT);
 }
-void ADXL335::begin()
-{
+void ADXL335::begin(){
     pinsInit();
     scale = (float)SENSITIVITY*ADC_AMPLITUDE/ADC_REF;
 }
-void ADXL335::getXYZ(int16_t *x,int16_t *y,int16_t *z)
-{
+void ADXL335::getXYZ(int16_t *x,int16_t *y,int16_t *z){
     *x = analogRead(X_AXIS_PIN);
     *y= analogRead(Y_AXIS_PIN);
     *z = analogRead(Z_AXIS_PIN);
 }
-void ADXL335::getAcceleration(float *ax,float *ay,float *az)
-{
+void ADXL335::getAcceleration(float *ax,float *ay,float *az){
     int x,y,z;
     float xvoltage,yvoltage,zvoltage;
     getXYZ(&x,&y,&z);
@@ -63,6 +59,28 @@ void ADXL335::getAcceleration(float *ax,float *ay,float *az)
     *ax = (xvoltage - ZERO_X)/SENSITIVITY;
     *ay = (yvoltage - ZERO_Y)/SENSITIVITY;
     *az = (zvoltage - ZERO_Z)/SENSITIVITY;
-    
 }
-
+float ADXL335::getAccelerationX(){
+    int x,y,z;
+    float xvoltage, ax;
+    getXYZ(&x,&y,&z);
+    xvoltage = (float)x*ADC_REF/ADC_AMPLITUDE;
+    ax = (xvoltage - ZERO_X)/SENSITIVITY;
+    return ax;
+}
+float ADXL335::getAccelerationy(){
+    int x,y,z;
+    float yvoltage, ay;
+    getXYZ(&x,&y,&z);
+    yvoltage = (float)y*ADC_REF/ADC_AMPLITUDE;
+    ay = (yvoltage - ZERO_Y)/SENSITIVITY;
+    return ay;
+}
+float ADXL335::getAccelerationx(){
+    int x,y,z;
+    float zvoltage, az;
+    getXYZ(&x,&y,&z);
+    zvoltage = (float)z*ADC_REF/ADC_AMPLITUDE;
+    az = (zvoltage - ZERO_Z)/SENSITIVITY;
+    return az;
+}
