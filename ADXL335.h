@@ -52,6 +52,9 @@ public:
     void begin();
     void getXYZ(int16_t *x,int16_t *y,int16_t *z);
     void getAcceleration(float *ax,float *ay,float *az);
+    float getAccelerationX();
+    float getAccelerationY();
+    float getAccelerationZ();
 };
 
 #endif

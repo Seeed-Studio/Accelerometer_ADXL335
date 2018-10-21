@@ -68,7 +68,7 @@ float ADXL335::getAccelerationX(){
     ax = (xvoltage - ZERO_X)/SENSITIVITY;
     return ax;
 }
-float ADXL335::getAccelerationy(){
+float ADXL335::getAccelerationY(){
     int x,y,z;
     float yvoltage, ay;
     getXYZ(&x,&y,&z);
@@ -76,7 +76,7 @@ float ADXL335::getAccelerationy(){
     ay = (yvoltage - ZERO_Y)/SENSITIVITY;
     return ay;
 }
-float ADXL335::getAccelerationx(){
+float ADXL335::getAccelerationZ(){
     int x,y,z;
     float zvoltage, az;
     getXYZ(&x,&y,&z);
