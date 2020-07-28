@@ -50,7 +50,7 @@ class ADXL335 {
     float scale;
   public:
     void begin();
-    void getXYZ(int16_t* x, int16_t* y, int16_t* z);
+    void getXYZ(int* x, int* y, int* z);
     void getAcceleration(float* ax, float* ay, float* az);
     float getAccelerationX();
     float getAccelerationY();

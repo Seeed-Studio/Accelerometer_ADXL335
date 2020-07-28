@@ -40,7 +40,7 @@ void ADXL335::begin() {
     pinsInit();
     scale = (float)SENSITIVITY * ADC_AMPLITUDE / ADC_REF;
 }
-void ADXL335::getXYZ(int16_t* x, int16_t* y, int16_t* z) {
+void ADXL335::getXYZ(int* x, int* y, int* z) {
     *x = analogRead(X_AXIS_PIN);
     *y = analogRead(Y_AXIS_PIN);
     *z = analogRead(Z_AXIS_PIN);
