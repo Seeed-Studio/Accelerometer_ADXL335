@@ -49,13 +49,11 @@ void ADXL335::getAcceleration(float* ax, float* ay, float* az) {
     int x, y, z;
     float xvoltage, yvoltage, zvoltage;
     getXYZ(&x, &y, &z);
+    
     xvoltage = (float)x * ADC_REF / ADC_AMPLITUDE;
     yvoltage = (float)y * ADC_REF / ADC_AMPLITUDE;
     zvoltage = (float)z * ADC_REF / ADC_AMPLITUDE;
-    Serial.println("voltage:");
-    Serial.println(xvoltage);
-    Serial.println(yvoltage);
-    Serial.println(zvoltage);
+    
     *ax = (xvoltage - ZERO_X) / SENSITIVITY;
     *ay = (yvoltage - ZERO_Y) / SENSITIVITY;
     *az = (zvoltage - ZERO_Z) / SENSITIVITY;
