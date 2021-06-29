@@ -32,17 +32,41 @@
 #define __ADXL335_H__
 
 #include <Arduino.h>
-/*macro definitions of Analog read pins*/
-#define X_AXIS_PIN A0
-#define Y_AXIS_PIN A1
-#define Z_AXIS_PIN A2
 
-#define ADC_AMPLITUDE 1024//amplitude of the 10bit-ADC of Arduino is 1024LSB
-#define ADC_REF 5   //ADC reference is 5v
-#define ZERO_X  1.22 //accleration of X-AXIS is 0g, the voltage of X-AXIS is 1.22v
-#define ZERO_Y  1.22 //
-#define ZERO_Z  1.25 //
-#define SENSITIVITY 0.25//sensitivity of X/Y/Z axis is 0.25v/g
+// macro definitions of Analog read pins
+#ifndef X_AXIS_PIN
+#define X_AXIS_PIN A0
+#endif
+#ifndef Y_AXIS_PIN
+#define Y_AXIS_PIN A1
+#endif
+#ifndef Z_AXIS_PIN
+#define Z_AXIS_PIN A2
+#endif
+
+// amplitude of the 10bit-ADC of Arduino is 1024LSB, using as default
+#ifndef ADC_AMPLITUDE
+#define ADC_AMPLITUDE 1024
+#endif
+#ifndef ADC_REF
+#define ADC_REF 5  // ADC reference is 5v
+#endif
+
+// accleration of X-AXIS is 0g, the voltage of X-AXIS is 1.22v
+#ifndef ZERO_X
+#define ZERO_X 1.22
+#endif
+#ifndef ZERO_Y
+#define ZERO_Y 1.22  //
+#endif
+#ifndef ZERO_Z
+#define ZERO_Z 1.25  //
+#endif
+
+// sensitivity of X/Y/Z axis is 0.25v/g
+#ifndef SENSITIVITY
+#define SENSITIVITY 0.25
+#endif
 
 class ADXL335 {
   private:
