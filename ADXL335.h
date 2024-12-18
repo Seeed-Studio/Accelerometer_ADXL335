@@ -32,7 +32,9 @@
 #define __ADXL335_H__
 
 #include <Arduino.h>
-
+#ifdef USE_TINYUSB
+#include <Adafruit_TinyUSB.h>
+#endif
 // macro definitions of Analog read pins
 #ifndef X_AXIS_PIN
 #define X_AXIS_PIN A0
